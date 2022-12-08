@@ -2,9 +2,9 @@
 
 /**
   *main - This function prints a statement using puts
-  *@arg : "Programming is like building a multilingual puzzle
+  *@arg : A pre-defined string 
   *
-  *return : 0
+  *return : the exit status of the fn
   */
 int main(void)
 {
