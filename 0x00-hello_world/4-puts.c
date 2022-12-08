@@ -3,7 +3,8 @@
 /**
   *main - This function prints a statement using puts
   *
-  *Return : exit status 0 if success
+  *Return: exit status of the function
+  *Return : 0
   */
 int main(void)
 {
