@@ -2,9 +2,8 @@
 
 /**
   *main - This function prints a statement using puts
-  *@arg : string
   *
-  *Return : exit status (0)
+  *Return : exit status 0 if success
   */
 int main(void)
 {
