@@ -2,9 +2,9 @@
 
 /**
   *main - This function prints a statement using puts
-  *@arg : A pre-defined string 
+  *@arg : predefined string input
   *
-  *return : the exit status of the fn
+  *return : exit status (0)
   */
 int main(void)
 {
