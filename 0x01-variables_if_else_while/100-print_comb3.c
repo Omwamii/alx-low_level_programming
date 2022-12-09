@@ -10,21 +10,27 @@ int main(void)
 {
 	int x;
 	int y;
+	int count1 = 0;
+	int count2 = 0;
 
 	for (x = '0'; x <= '9'; x++)
 	{
+		count1++;
+
 		for (y = '1'; y <= '9'; y++)
 		{
-			if (x == y)
-				continue;
-			else if (x > y)
-				continue;
-			else
+			count2++;
+
+			if (!(x == y || x > y)) 
 			{
 				putchar(x);
 				putchar(y);
-				putchar(',');
-				putchar(' ');
+
+				if (!(x == '8' && y == '9'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
