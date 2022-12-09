@@ -5,7 +5,7 @@
 /**
   *main - entry point
   *
-  *Return : value 0
+  *Return - return exit status
   */
 int main(void)
 {
