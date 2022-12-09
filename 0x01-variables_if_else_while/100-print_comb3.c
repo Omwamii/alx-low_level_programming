@@ -10,17 +10,11 @@ int main(void)
 {
 	int x;
 	int y;
-	int count1 = 0;
-	int count2 = 0;
 
 	for (x = '0'; x <= '9'; x++)
 	{
-		count1++;
-
 		for (y = '1'; y <= '9'; y++)
 		{
-			count2++;
-
 			if (!(x == y || x > y)) 
 			{
 				putchar(x);
