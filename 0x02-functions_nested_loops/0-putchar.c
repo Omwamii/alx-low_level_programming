@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include<unistd.h>
 
 /**
   *main - entry point
@@ -7,6 +7,7 @@
   */
 int main(void)
 {
-	printf("_putchar\n");
-	return (0);
+	char x = "_putchar";
+	write(1,x,8);
+	write(1,'\n',2);
 }
