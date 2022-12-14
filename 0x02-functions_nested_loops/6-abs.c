@@ -4,6 +4,7 @@
 /**
   *_abs - prints absolute value of num
   *@i: parameter
+  *Return: absolute value
   */
 int _abs(int i)
 {
