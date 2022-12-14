@@ -8,8 +8,9 @@
   */
 int main(void)
 {
-	char x[] = "_putchar\n";
+	char x[] = "_putchar";
 
-	_putchar(&x);
+	_putchar(x);
+	write(1,'\n',2);
 	return (0);
 }
