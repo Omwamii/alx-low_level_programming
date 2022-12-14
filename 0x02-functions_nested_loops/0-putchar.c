@@ -9,6 +9,10 @@
 int main(void)
 {
 	char x = "_putchar\n";
-	int n = sizeof(x);
-	write(1,x,n);
+	_putchar(x);
+}
+
+int _putchar(char c)
+{
+	return (write(1,&c, 1));
 }
