@@ -10,6 +10,7 @@ int main(void)
 {
 	char x[] = "_putchar\n";
 	_putchar(x);
+	return (0);
 }
 
 int _putchar(char *c)
