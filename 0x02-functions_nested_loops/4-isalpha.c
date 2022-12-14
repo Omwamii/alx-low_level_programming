@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-  *-isalpha - checks if is a letter
+  *_isalpha - checks if is a letter
   *@c: parameter to check
   *Return: 1 if is a letter, 0 otherwise
   */
