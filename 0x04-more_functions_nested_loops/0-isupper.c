@@ -4,6 +4,7 @@
 /**
   *_isupper - checks if uppercase
   *@c: int char  to be checked
+  *
   *Return: 1 if uppercase, 0 if otherwise
   */
 
