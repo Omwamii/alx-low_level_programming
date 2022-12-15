@@ -3,9 +3,10 @@
 
 /**
   *_isupper - checks if uppercase
-  *@c: char to be checked
+  *@c: int char  to be checked
   *Return: 1 if uppercase, 0 if otherwise
   */
+
 int _isupper(int c)
 {
 	if (c >= 65 && c <= 91)
