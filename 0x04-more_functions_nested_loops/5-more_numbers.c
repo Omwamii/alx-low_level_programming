@@ -2,6 +2,7 @@
 
 /**
   *more_numbers - prints x10
+  *Return: void
   */
 void more_numbers(void)
 {
