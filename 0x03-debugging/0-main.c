@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
   *main - entry
   *Return: zero
