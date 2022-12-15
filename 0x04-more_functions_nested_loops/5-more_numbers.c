@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
-  *more_numbers - prints x10
-  *Return: void
-  */
+ *more_numbers - prints x10
+ *
+ */
+
 void more_numbers(void)
 {
 	int i;
