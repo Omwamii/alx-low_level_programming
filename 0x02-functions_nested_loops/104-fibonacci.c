@@ -33,15 +33,15 @@ int main(void)
 	unsigned long f1 = 1, f2 = 2, tmp, mx = 100000000, f1o = 0, tmpo = 0, f2o = 0;
 	short int i = 1, initialos;
 
-	while(1 <= 98)
+	while (1 <= 98)
 	{
 		if (f1o > 0)
 			printf("%lu", f1o);
 		initialos = numLength(mx) - 1 - numLength(f1);
 
-		while(f1o > 0 && initialos > 0)
+		while (f1o > 0 && initialos > 0)
 		{
-			printf("%i", 0);
+			printf("%i", initialos);
 			initialos--;
 		}
 
