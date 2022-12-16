@@ -1,64 +1,48 @@
 #include <stdio.h>
 
 /**
-  *numLength - returns length of string
-  *@num: operand
-  *Return: num of strings
-  */
-
-int numLength(int num)
-{
-	int length = 0;
-
-	if (!num)
-	{
-		return (1);
-	}
-
-	while (num)
-	{
-		num = num / 10;
-		length += 1;
-	}
-
-	return (length);
-}
-/**
   *main - first 98 fibs
   *Return: 0
   */
 
 int main(void)
 {
-	unsigned long f1 = 1, f2 = 2, tmp, mx = 100000000, f1o = 0, tmpo = 0, f2o = 0;
-	short int i = 1, initialos;
+	int count;
+	unsigned long i, j, k;
+	unsigned long m, n, p, carry;
 
-	while (1 <= 98)
+	count = 0;
+	i = 0;
+	j = 1;
+	for (count = 1; count <= 91; count++)
 	{
-		if (f1o > 0)
-			printf("%lu", f1o);
-		initialos = numLength(mx) - 1 - numLength(f1);
-
-		while (f1o > 0 && initialos > 0)
-		{
-			printf("%i", initialos);
-			initialos--;
-		}
-
-		printf("%lu", f1);
-
-		tmp = (f1 + f2) % mx;
-		tmpo = f1o + f2o + (f1 + f2) / mx;
-		f1 = f2;
-		f1o = f2o;
-		f2 = tmp;
-		f2o = tmpo;
-
-		if (i != 98)
-			printf(", ");
-		else
-			printf("\n");
-		i++;
+		k = i + j;
+		i = j;
+		j = k;
+		printf("%lu, ", k);
 	}
+	m = i % 1000;
+	i = i / 1000;
+	n = j % 1000;
+	j = j / 1000;
+
+	while (count <= 98)
+	{
+		carry = (m + n) / 1000;
+		p = (m + n) - carry * 1000;
+		k = (i + j) + carry;
+		m = n;
+		n = p;
+		i = j;
+		j = k;
+		if (p >= 100)
+			printf("%lu%lu", k, p);
+		else
+			printf("%lu0%lu", k, p);
+		if (count != 98)
+			printf(", ");
+		count++
+	}
+	putchar('\n');
 	return (0);
 }
