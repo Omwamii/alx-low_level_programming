@@ -41,7 +41,7 @@ int main(void)
 			printf("%lu0%lu", k, p);
 		if (count != 98)
 			printf(", ");
-		count++
+		count++;
 	}
 	putchar('\n');
 	return (0);
