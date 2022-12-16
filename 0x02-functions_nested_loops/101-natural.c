@@ -1,4 +1,4 @@
-#include <stdio.h>>
+#include <stdio.h>
 
 /**
   *main - print natural nos below 1024 thats
