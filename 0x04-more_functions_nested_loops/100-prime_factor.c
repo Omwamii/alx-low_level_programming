@@ -2,9 +2,10 @@
 #include <math.h>
 
 /**
-  *main - entry
-  *Return: always 0
-  */
+ *main - entry
+ *Return: always 0
+ */
+
 int main(void)
 {
 	long int n;
@@ -29,7 +30,7 @@ int main(void)
 		}
 	}
 
-	if ( n > 2)
+	if (n > 2)
 		max = n;
 
 	printf("%ld\n", max);
