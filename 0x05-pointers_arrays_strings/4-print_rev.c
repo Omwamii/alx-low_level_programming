@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
-  *print_rev - prints reverse of string
-  *@s: string 
+  *print_rev - prints reverse
+  *@s: string
   */
-
 void print_rev(char *s)
 {
 	int count = 0;
@@ -18,7 +17,7 @@ void print_rev(char *s)
 
 	for (i = 0; i < count; i++)
 	{
-		_putchar(s);
+		_putchar(*s);
 		s--;
 	}
 	_putchar('\n');
