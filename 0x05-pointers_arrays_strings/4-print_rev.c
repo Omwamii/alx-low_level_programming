@@ -19,11 +19,13 @@ void print_rev(char *s)
 	{
 		if (i != 0)
 		{
-		_putchar(*s);
-		s--;
-		}
-		else 
 			_putchar(*s);
+			s--;
+		}
+		else
+		{
+			_putchar(*s);
+		}
 	}
 	_putchar('\n');
 }
