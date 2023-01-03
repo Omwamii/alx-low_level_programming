@@ -1,4 +1,5 @@
 #include "main.h"
+#define NULL 0
 
 /**
  *_strchr - finds occurence of char in a string
