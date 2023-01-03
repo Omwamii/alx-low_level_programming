@@ -9,15 +9,21 @@
 
 void print_diagsums(int *a, int size)
 {
-	int d1 = d2 = 0;
-	int i;
+	int d1 = 0;
+	int d2 = 0;
+	int i, row;
 
-	for (i = 0; i < size; ++i)
+	for (row = 0; row < size; row++)
 	{
-		d1 += a[i][i];
-		d2 += a[i][size - i - 1];
+		i = (row * size) + row;
+		d1 += a[i];
 	}
 
-	printf("%d, ", d1);
-	printf("%d", d2);
+	for (row = 1; row <= size; row++)
+	{
+		i = (row * size) - row;
+		d2 += a[i];
+	}
+
+	printf("%d, %d\n", d1, d2);
 }
