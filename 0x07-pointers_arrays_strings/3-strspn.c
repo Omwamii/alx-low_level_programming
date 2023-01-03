@@ -17,18 +17,24 @@ unsigned int _strspn(char *s, char *accept)
 		if (*s == *accept)
 		{
 			count++;
-			s++;
 			accept++;
+			s++;
 		}
 
 		else
 		{
-			for (; count != 0;)
+			if (*accept != '\0')
 			{
-				accept--;
-				count--;
+				for (; count > 0;)
+				{
+					accept--;
+					count--;
+				}
+				s++;
 			}
-			s++;
+
+			else
+				break;
 		}
 	}
 
