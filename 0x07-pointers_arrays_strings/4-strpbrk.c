@@ -1,4 +1,5 @@
 #include "main.h"
+#define NULL 0
 
 /**
  *_strpbrk - prints string after
@@ -11,33 +12,17 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	int scan = 0;
+	int i, j;
 
-	while (*s != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (*s == *accept)
+		for (j = 0; accept[j] != '\0'; j++)
 		{
-			return (s);
-		}
-		else
-		{
-			if (*accept != '\0')
+			if (accept[j] == s[i])
 			{
-				scan++;
-				accept++;
-			}
-
-			else
-			{
-				for (; scan > 0;)
-				{
-					accept--;
-					scan--;
-				}
-				s++;
+				return (&s[i]);
 			}
 		}
 	}
-
 	return (NULL);
 }
