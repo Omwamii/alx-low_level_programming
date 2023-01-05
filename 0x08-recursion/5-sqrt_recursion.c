@@ -10,13 +10,14 @@
 
 int assist(int i, int j)
 {
-	if (j * j > i)
+	if ((j * j) > i)
 		return (-1);
-	else if (j * j == i)
-		return (1);
+	if ((j * j) == i)
+		return (j);
 	else
-		return (assist(i, (j + 1)));
+		return (assist(i, j + 1));
 }
+
 /**
  *  _sqrt_recursion - prints natural sqrt
  * @n: number to be checked
@@ -26,8 +27,10 @@ int assist(int i, int j)
 
 int _sqrt_recursion(int n)
 {
-	 if (n == 0)
-		 return (0);
-	 else
-		 return (assist(n, 1));
+	if (n == 0)
+		return (0);
+	if (n < 0)
+		return (-1);
+	else
+		return (assist(n, 1));
 }
