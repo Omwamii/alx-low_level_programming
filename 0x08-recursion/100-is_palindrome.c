@@ -9,7 +9,7 @@
  * return: 1 if palindrome 0 if not
  */
 
-void check(char *str, int len, int i)
+int check(char *str, int len, int i)
 {
 	if (i < len && str[i] == str[len])
 		return (check(str, len - 1, i + 1));
