@@ -6,7 +6,7 @@
  * @len: string length
  * @i: incrementor
  *
- * return: 1 if palindrome 0 if not
+ * Return: 1 if palindrome 0 if not
  */
 
 int check(char *str, int len, int i)
