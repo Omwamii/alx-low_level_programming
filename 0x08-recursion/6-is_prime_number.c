@@ -12,16 +12,14 @@ int divider(int n, int d)
 {
 	if (d >= n)
 		return (0);
+
+	if (n % d == 0)
+		return (1);
 	else
-	{
-		if (n % d == 0)
-			return (1);
-		else
-			return (divider(n, d + 1));
-	}
+		return (divider(n, d + 1));
 }
 /**
- * int is_prime_number(int n) - prints if num is prime or not
+ * is_prime_number - prints if num is prime or not
  * @n: number to be checked
  *
  * Return: 1 if prime 0 if not
@@ -31,7 +29,7 @@ int is_prime_number(int n)
 {
 	if (n == 0 || n == 1)
 		return (0);
-	else
+
 		return (divider(n, 1));
 }
 
