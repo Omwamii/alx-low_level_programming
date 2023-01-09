@@ -20,11 +20,10 @@ int main(int argc, char **argv)
 			printf("0\n");
 			return (0);
 		}
-		else
+
+		while (num)
 		{
-			while (num)
-			{
-				change++;
+			change++;
 				if ((num - 25) >= 0)
 				{
 					num -= 25;
@@ -41,12 +40,14 @@ int main(int argc, char **argv)
 					continue;
 				}
 				if ((num - 2) >= 0)
+				{
 					num -= 2;
+					continue;
+				}
 				num--;
-			}
+		}
 			printf("%d\n", change);
 			return (0);
-		}
 	}
 	printf("Error\n");
 	return (1);
