@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
   *main - entry point
@@ -9,16 +8,9 @@
   *
   *Return: exit value
   */
-
 int main(int argc, char **argv)
 {
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-
-	else
+	if (argc == 2)
 	{
 		int num = atoi(argv[1]);
 		int change = 0;
@@ -33,7 +25,6 @@ int main(int argc, char **argv)
 			while (num)
 			{
 				change++;
-
 				if ((num - 25) >= 0)
 				{
 					num -= 25;
@@ -44,25 +35,19 @@ int main(int argc, char **argv)
 					num -= 10;
 					continue;
 				}
-
 				if ((num - 5) >= 0)
 				{
 					num -= 5;
 					continue;
 				}
-
 				if ((num - 2) >= 0)
-				{
 					num -= 2;
-					continue;
-				}
-
 				num--;
 			}
 			printf("%d\n", change);
-
 			return (0);
 		}
-
 	}
+	printf("Error\n");
+	return (1);
 }
