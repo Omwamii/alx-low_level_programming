@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 		int mult = 1;
 		int i;
 
-		for (i= 1; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
 			mult *= atoi(*(++argv));
 		}
