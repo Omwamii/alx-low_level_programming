@@ -47,7 +47,7 @@ char *str_concat(char *s1, char *s2)
 		for (; i < size1; i++)
 			dest[i] = s1[i];
 
-		for (j = (i + 1), k = 0; k < size2; j++, k++)
+		for (j = i, k = 0; k < size2; j++, k++)
 			dest[j] = s2[k];
 
 		dest[j + 1] = '\0';
