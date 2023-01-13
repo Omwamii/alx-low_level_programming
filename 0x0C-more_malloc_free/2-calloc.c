@@ -19,7 +19,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		{
 			unsigned int i;
 
-			for (i = 0; i < nmemb; i++)
+			for (i = 0; i < (size * nmemb); i++)
 			{
 				dest[i] = 0;
 			}
