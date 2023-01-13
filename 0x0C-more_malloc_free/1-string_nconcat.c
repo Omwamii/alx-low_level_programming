@@ -43,21 +43,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = size2;
 	dest = malloc((size1 + n) + 1);
 
-	if (dest)
-	{
-		for (i = 0; i < size1; i++)
-		{
-			dest[i] = s1[i];
-		}
+	if (dest == NULL)
+		return (NULL);
 
-		for (j = i, k = 0; k < n; j++, k++)
-		{
-			dest[j] = s2[k];
-		}
-		dest[j + 1] = '\0';
+	for (i = 0; i < size1; i++)
+		dest[i] = s1[i];
 
-		return (dest);
-	}
+	for (j = i, k = 0; k < n; j++, k++)
+		dest[j] = s2[k];
 
-	return (NULL);
+	dest[j + 1] = '\0';
+
+	return (dest);
 }
