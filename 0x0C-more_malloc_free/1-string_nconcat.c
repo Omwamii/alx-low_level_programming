@@ -13,13 +13,15 @@ int _strlen(char *str)
 	unsigned int i = 0;
 
 	if (str == NULL)
+	{
 		str = "";
+		return (i);
+	}
 
-	while (*str != '\0')
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-
 	return (i);
 }
 
@@ -49,7 +51,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			dest[i] = s1[i];
 		}
 
-		for (j = i, k = 0; j < n; j++, k++)
+		for (j = i, k = 0; k < n; j++, k++)
 		{
 			dest[j] = s2[k];
 		}
