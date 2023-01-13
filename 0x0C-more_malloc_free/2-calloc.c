@@ -11,7 +11,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	if (nmemb)
+	if (nmemb && size != 0)
 	{
 		char *dest = malloc(size * nmemb);
 
