@@ -28,6 +28,7 @@ int _strlen(char *str)
   *string_nconcat - concatenates strings
   *@s1: lead string
   *@s2: tail string
+  *@n: size of s2 to scan
   *
   *Return: ptr to concated str
   */
@@ -36,7 +37,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int size1 = _strlen(s1);
 	unsigned int size2 = _strlen(s2);
-	unsigned int i,j,k;
+	unsigned int i, j, k;
 	char *dest = malloc((size1 + n) + 1);
 
 	if (n >= size2)
