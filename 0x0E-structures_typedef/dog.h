@@ -3,6 +3,7 @@
 /**
   * struct dog - user defined data type for dogo
   *@name: name of dogo
+  *@age: age of dogo
   *@owner: dogo owner
   */
 struct dog
