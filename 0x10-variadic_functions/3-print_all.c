@@ -7,7 +7,6 @@
   *print_all - prints every type
   *@format: type range  of parameters
   */
-
 void print_all(const char * const format, ...)
 {
 	va_list valist;
@@ -49,7 +48,5 @@ void print_all(const char * const format, ...)
 			break;
 		} i++;
 	}
-	printf("\n");
-
-	va_end(valist);
+	printf("\n"), va_end(valist);
 }
