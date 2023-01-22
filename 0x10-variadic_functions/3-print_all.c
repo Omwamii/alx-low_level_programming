@@ -1,6 +1,8 @@
 #include "variadic_functions.h"
 #include <stdlib.>
+#include <stdarg.h>
 #include <stdio.h>
+
 /**
   *print_all - prints every type
   *@format: type range  of parameters
