@@ -5,7 +5,7 @@
   *@b: ptr to str of os and 1s chars
   *
   *Return: converted number or 0 if b is null or
-  there are characters which are not 0 or 1
+  *there are characters which are not 0 or 1
   */
 
 unsigned int binary_to_uint(const char *b)
@@ -34,8 +34,7 @@ unsigned int binary_to_uint(const char *b)
 			continue;
 		}
 
-		if (b[len] > 49 || b[len] < 48 )
-			return (0);
+		return (0);
 
 	}
 
