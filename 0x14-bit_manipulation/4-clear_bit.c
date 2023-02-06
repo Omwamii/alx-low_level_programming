@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  clear_bit - sets certain bit index to 0
+  *clear_bit - sets certain bit index to 0
   *@n: passed number
   *@index: index intended to be set
   *
