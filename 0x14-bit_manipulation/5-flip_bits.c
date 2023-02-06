@@ -1,24 +1,6 @@
 #include "main.h"
 
 /**
-  *countset - counts set bits
-  *@n : passed result
-  *
-  *Return: set bits
-  */
-
-unsigned int countset(unsigned int n)
-{
-	unsigned int count = 0;
-
-	while (n > 0)
-	{
-		count++;
-		n &= (n - 1);
-	}
-	return (count);
-}
-/**
   *flip_bits - returns number of bits you need to flip
   *to get from one number to another
   *@n: number
@@ -28,5 +10,13 @@ unsigned int countset(unsigned int n)
   */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	return (countset(n ^ m));
+	unsigned long int l = n ^ m;
+	int count = 0;
+
+	while (l)
+	{
+		count += l & 1;
+		l >> 1;
+	}
+	return (count);
 }
