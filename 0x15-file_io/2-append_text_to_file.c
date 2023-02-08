@@ -51,7 +51,7 @@ int _strlen(char *str)
 {
 	int count = 0;
 
-	if (str[count] != '\0')
+	while (str[count] != '\0')
 	{
 		count++;
 	}
