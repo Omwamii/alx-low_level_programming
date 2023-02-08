@@ -14,47 +14,35 @@ int _strlen(char *str);
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, writef;
-	int len = _strlen(text_content);
+	int fd, i, writef;
 
 	if (filename == NULL)
+	{
 		return (-1);
+	}
 
-	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
 	if (fd == -1)
-		return (-1);
-
-	if (len != 0)
 	{
-		writef = write(fd, text_content, len);
+		return (-1);
+	}
 
-		if (writef == -1)
-		{
-			close(fd);
-			return (-1);
-		}
+	if (text_content == NULL)
+	{
+		text_content = "";
+	}
+
+	for (i = 0; text_content[i] != 0; i++)
+		;
+
+	writef = write(fd, text_content, i);
+
+	if (writef == -1)
+	{
+		return (-1);
 	}
 
 	close(fd);
 	return (1);
 }
-
-/**
-  *_strlen - finds length of string
-  *@str: string to measure
-  *
-  *Return: length of str
-  */
-
-int _strlen(char *str)
-{
-	int count = 0;
-
-	while (str[count] != '\0')
-	{
-		count++;
-	}
-	return (count);
-}
-
