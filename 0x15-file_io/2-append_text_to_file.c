@@ -14,47 +14,37 @@ int _strlen(char *str);
   */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, appendf;
-	int len = _strlen(text_content);
+	int fd, i;
 
-	if (filename == NULL)
-		return (-1);
+	if (text_content == NULL)
+	{
+		text_content = "";
+	}
+
+	for (i = 0; text_content[i] != 0; i++);
 
 	fd = open(filename, O_WRONLY | O_APPEND);
+
 	if (fd == -1)
 		return (-1);
 
-	if (len != 0)
-	{
-		appendf = write(fd, text_content, len);
-
-		if (appendf != len)
-		{
-			close(fd);
-			return (-1);
-		}
-	}
+	write(fd, text_content, i);
 
 	close(fd);
 	return (1);
 
-}
+	if (filename == NULL)
+		return (-1);
 
-/**
-  *_strlen - finds length of string
-  *@str: string to be measured
-  *
-  *Return: length
-  */
-
-int _strlen(char *str)
-{
-	int count = 0;
-
-	while (str[count] != '\0')
+	if (text_content == NULL)
 	{
-		count++;
+		if (filename != NULL)
+		{
+			return (1);
+		}
+		else
+		{
+			return (-1);
+		}
 	}
-
-	return (count);
 }
