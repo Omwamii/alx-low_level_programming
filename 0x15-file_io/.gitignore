@@ -6,7 +6,4 @@ b
 a
 o
 cp
-append_prot.c
-create_prot.c
-elf_prot.c
 elf_header
