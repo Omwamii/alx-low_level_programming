@@ -89,7 +89,7 @@ void display_header(Elf32_Ehdr *header)
 	int i;
 
 	printf("ELF Header:\n");
-	printf("  Magic:    ");
+	printf("  Magic:   ");
 
 	for (i = 0; i < EI_NIDENT; i++)
 		printf("%2.2x ", header->e_ident[i]);
@@ -130,12 +130,18 @@ int main(int argc, char *argv[])
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		return (-1);
+	{
+		dprintf(STDERR_FILENO, "%s: Error '%s': No such file\n", argv[0], argv[1]);
+		exit(98);
+	}
 
 	rdf = read(fd, &ehdr, sizeof(ehdr));
 
 	if (rdf == -1)
-		return (-1);
+	{
+		dprintf(STDERR_FILENO, "Error: cannot read from %s\n", argv[1]);
+		exit(98);
+	}
 
 	if (ehdr.e_ident[0] != 0x7f || ehdr.e_ident[1] != 'E' ||
 			ehdr.e_ident[2] != 'L' || ehdr.e_ident[3]
@@ -148,5 +154,10 @@ int main(int argc, char *argv[])
 	display_header(&ehdr);
 
 	close(fd);
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: cannot close %d\n", fd);
+		exit(98);
+	}
 	return (0);
 }
