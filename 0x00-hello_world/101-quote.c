@@ -2,7 +2,7 @@
 #include<unistd.h>
 
 /**
-  *main - entry point
+  *main - entry point to execution
   *
   *Return: value of 1
   */
