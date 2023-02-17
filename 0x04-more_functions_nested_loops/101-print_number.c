@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  *print_number - prints integer
+  *print_number - prints integer passed
   *@n: param to be printed
   */
 
