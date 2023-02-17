@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /**
-  *main - prints size of types
+  *main - prints the  size of C variable types
   *
   *Return: return 0 for exit
   */
