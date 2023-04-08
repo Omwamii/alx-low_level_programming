@@ -12,6 +12,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 	hash_node_t *tmp = NULL;
 
+	if (ht == NULL)
+		return (NULL);
+
 	if (index > ht->size) /* out of bounds */
 		return (NULL);
 
