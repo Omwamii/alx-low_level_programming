@@ -1,26 +1,6 @@
 #include "hash_tables.h"
 
 /**
- * to_ascii - convert string to ascii value
- * @str: string to be converted
- *
- * Return: ascii value
- */
-int to_ascii(char *str)
-{
-	int asc = 0, i = 0;
-
-	if (str == NULL)
-		return (0);
-	while (str[i])
-	{
-		asc += str[i];
-		i++;
-	}
-	return (asc);
-}
-
-/**
  * insert_sorted - inserts node to sorted list
  * @table: ptr to table
  * @node: node to be inserted
@@ -42,7 +22,7 @@ void insert_sorted(shash_table_t **table, shash_node_t *node)
 	tmp = (*table)->shead;
 	while (tmp)
 	{
-		if (to_ascii(node->key) < to_ascii(tmp->key))
+		if (strcmp(node->key, tmp->key) < 0)
 		{
 			if (tmp->sprev == NULL) /* insert at beginning */
 			{
