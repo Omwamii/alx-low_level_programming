@@ -10,27 +10,25 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i = 0;
 	hash_node_t *tmp = NULL;
-	int set = 0; /* variable to check if array is empty */
+	int set = 0; /* check if array is empty */
 
 	if (ht == NULL)
-		exit(EXIT_SUCCESS);
+		return;
 
 	printf("{");
 	for (; i < ht->size; i++)
 	{
-		set = 0;
 		tmp = ht->array[i];
 		while (tmp)
 		{
-			set = 1;
+			set += 1;
+			if (set > 1) /* no , before first item */
+				printf(", ");
 			printf("'%s': '%s'", tmp->key, tmp->value);
-			if (tmp->next)
+			if (tmp->next != NULL)
 				printf(", ");
 			tmp = tmp->next;
 		}
-		if (i != (ht->size) - 1 && set)
-			printf(", ");
-
 	}
 	printf("}\n");
 }
