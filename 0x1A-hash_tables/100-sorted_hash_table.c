@@ -232,11 +232,12 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
+	shash_table_t *table = ht;
 	shash_node_t *tmp, *curr;
 
-	if (ht == NULL)
+	if (table == NULL)
 		return;
-	tmp = ht->shead;
+	tmp = table->shead;
 
 	/* free all nodes via sorted list */
 	while (tmp)
@@ -247,6 +248,6 @@ void shash_table_delete(shash_table_t *ht)
 		free(tmp);
 		tmp = curr;
 	}
-	free(ht->array);
-	free(ht);
+	free(table->array);
+	free(table);
 }
