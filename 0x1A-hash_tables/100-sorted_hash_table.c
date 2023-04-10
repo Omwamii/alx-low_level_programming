@@ -112,9 +112,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	val = strdup(value);
-	if (!val)
-		return (0);
-
 	node = malloc(sizeof(shash_node_t));
 	if (node == NULL)
 	{
@@ -122,14 +119,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	index = key_index((const unsigned char *)key, ht->size);
-	node->key = strdup(key);
-	if (node->key == NULL)
-	{
-		free(val);
-		free(node);
-	}
-
-	node->next = NULL;
+	node->key = strdup(key), node->next = NULL;
 	tmp = ht->array[index];
 	it = tmp; /* to check if key present with diff value */
 	if (tmp == NULL) /* no item */
@@ -148,10 +138,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			/* no need to insert in sorted since was already present */
 			return (1);
 		}
-		it = it->snext;
+		it = it->next;
 	}
-	node->next = tmp;
-	node->value = val;
+	node->next = tmp, node->value = val;
 	insert_sorted(&ht, node);
 	ht->array[index] = node;
 	return (1);
