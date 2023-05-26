@@ -1,0 +1,11 @@
+CC = gcc
+SRC = main.c school.c
+NAME = school
+OBJ = $(SRC:.c=.o)  # Convert .c files to .o files
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+
+%.o: %.c
+	$(CC) -c $< -o $@
