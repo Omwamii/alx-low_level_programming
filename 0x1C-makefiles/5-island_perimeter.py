@@ -23,6 +23,7 @@ def island_perimeter(grid):
     for row_num, row in enumerate(grid):
         if not isinstance(row, list):
             return
+        row_size = len(row)
         for index, item in enumerate(row):
             if item == 0:
                 continue
@@ -30,8 +31,9 @@ def island_perimeter(grid):
             if row_num != 0 and \
                     grid[row_num - 1][index] == 1:  # 1 is direclty above
                 cell_perim -= 1
-            if row[index + 1] == 1:
-                cell_perim -= 1
+            if index != row_size - 1:
+                if row[index + 1] == 1:
+                    cell_perim -= 1
             if index != 0 and row[index - 1] == 1:
                 cell_perim -= 1
             if row_num != grid_size - 1 and \
