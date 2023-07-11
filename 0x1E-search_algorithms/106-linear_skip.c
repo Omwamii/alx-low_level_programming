@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * jump_list - perform jump search on singly linked list
+ * jump_list - ptr to head of list
  * @list: ptr to head of list
  * @size: number of nodes in list
  * @value: value to be searched
