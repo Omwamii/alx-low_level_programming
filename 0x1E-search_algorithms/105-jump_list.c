@@ -2,6 +2,7 @@
 
 /**
  * jump_list - ptr to head of list
+ * @list: ptr to head of list
  * @size: number of nodes in list
  * @value: value to be searched
  *
@@ -20,8 +21,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	{
 		while (end >= size)
 			end--, jump--;
-		low = tmp;
-		count = jump;
+		low = tmp, count = jump;
 		while (count > 0)
 		{
 			tmp = tmp->next;
@@ -34,7 +34,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 			break; /* reached end of list */
 
 	}
-	printf("Value found between indexes [%lu] and [%lu]\n", low->index, high->index);
+	printf("Value found between indexes [%lu] and [%lu]\n", low->index,
+			high->index);
 	if (end > size)
 		end = size - 1;
 	tmp = low;
